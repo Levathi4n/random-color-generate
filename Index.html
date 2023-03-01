@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Random Color Generator</title>
+    <style>
+      body {
+        background-color: #f5f5f5;
+        text-align: center;
+        font-size: 32px;
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+      }
+      button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 24px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="color-box"></div>
+    <button onclick="generateColor()">Generate Color</button>
+    
+    <script>
+      function generateColor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        document.getElementById("color-box").style.backgroundColor = color;
+        document.getElementById("color-box").innerHTML = color;
+      }
+    </script>
+  </body>
+</html>
